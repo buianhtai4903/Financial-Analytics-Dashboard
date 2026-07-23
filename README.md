@@ -5,7 +5,9 @@ mục tiêu.
 ⚠️ Dữ liệu trong dashboard là dữ liệu P&L giả định, chỉ phục vụ mục đích luyện tập.
 
 Số trang	5
+
 Tổng số visual	88
+
 Số DAX measures	54 (gom trong 2 bảng đo lường _M và _M MoM)
 
 Cấu trúc report
@@ -19,3 +21,23 @@ Cấu trúc report
 4	Opex	15	Chi phí vận hành theo hạng mục (Payroll/Marketing/R&D/Rent/Equipment).
 
 5	KPI	22	KPI động — chọn 1 chỉ số qua slicer để so với mục tiêu/benchmark
+
+# Bảng	Loại	Vai trò
+
+_M	Bảng đo lường	Chứa ~46 measure nghiệp vụ chính (Revenue, COGS, Opex, EBIT, Net Profit...)
+
+_M MoM	Bảng đo lường phụ	6 measure biến động tháng-qua-tháng
+
+Calendar	Date dimension	Month, Month in text, Quarter
+
+LocalDateTable_...	Bảng ngày tự sinh	Year (dùng trong pivot table)
+
+Business Line	Dimension	Phân khúc kinh doanh
+
+Subgroup	Dimension	Phân nhóm chi tiết (loại Opex, loại COGS...)
+
+Headlines	Label table	Nhãn cột cho waterfall chart P&L
+
+KPI	Danh mục KPI	Danh sách KPI có thể chọn (mặc định EBIT)
+
+KPI_Target_Benchmark	Bảng mục tiêu	Giá trị Target/Benchmark theo từng KPI
